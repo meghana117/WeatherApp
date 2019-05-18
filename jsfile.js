@@ -93,10 +93,7 @@ function updateForecast(forecast){
 }
 
 
-$("#refreshButton").on("click", function(){
-  $("#refreshButton").html("<i class='fa fa-refresh fa-spin fa-fw'></i>");
-  getWeatherData();
-});
+
 
 
 // Celcius button handler.
