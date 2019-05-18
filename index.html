@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<script type="text/javascript" src="https://weatherwidget.io/js/widget.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<script type="text/javascript" src="jsfile.js"></script>
+
+	<div class="topnav">
+  <input type="text" placeholder="Search..">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</div>
+
+<div>°
+	<h4><span id="city-name">Bengaluru,</span> <span id="city-code">IN</span></h4>
+	<h5><span id="localdate"></span> <span id="localtime"></span></h5>
+</div>
+
+
+      <div class="col-md-5 col-sm-7" style="margin: 10px auto;padding:0;">
+        <div class="row">
+          <i class="wi" id ="main-icon" style="font-size: 85px;"></i>
+          <div>
+          	<button><i class="fa fa-cloud"></i></button>
+            <span id="mainTemperature">31</span>
+            <p id="tempDescription"></p>
+          </div>
+          <p style="font-size: 1.5rem;"><a href="#" class="active" id="celcius">°C</a> | <a href="#" id="farenheit">°F</a></p>
+        </div>
+      </div>
+      
+      <!-- Left panel -->
+      <div class="panel-body">
+      	<div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-3 row" style="text-align: right;">
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Precipitaion: <span id="precipitation"></span>%</h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Humidity: <span id="humidity">43</span>°</h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Wind: <span id="wind"></span>mph</h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Sunrise: <span id="sunrise"></span></h6>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-3 row" style="text-align: right;">
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Cloud Coverage: <span id="cloud"></span>%</h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Dew Point: <span id="dew"></span>°F</h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Visibility: <span id="visibility">10000miles</span></h6>
+        </div>
+        <div class="col-md-12 col-sm-3 col-xs-3 side-weather-info">
+          <h6>Sunset: <span id="sunset"></span></h6>
+        </div>
+      </div>
+      </div>
+
+
+<hr>
+
+    <div class="container-fluid">
+    <div class="row" style="padding: 2px;">
+      
+      <!-- Day 1 -->
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-1-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-1-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-1-icon"></i>
+            </div>
+          </div>
+          <div class="col-sm-4 forecast-min-low">
+            <p><spam class="high-temperature" id="forecast-day-1-ht"></spam></p>
+            <p><spam class="low-temperature" id="forecast-day-1-lt"></spam></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 2 -->
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-2-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-2-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-2-icon"></i>
+            </div>
+          </div>
+          <div class="col-sm-4 forecast-min-low">
+            <p><spam class="high-temperature" id="forecast-day-2-ht"></spam></p>
+            <p><spam class="low-temperature" id="forecast-day-2-lt"></spam></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 3 -->
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-3-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-3-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-3-icon"></i>
+            </div>
+          </div>
+          <div class="col-sm-4 forecast-min-low">
+            <p><spam class="high-temperature" id="forecast-day-3-ht"></spam></p>
+            <p><spam class="low-temperature" id="forecast-day-3-lt"></spam></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 4 -->
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-4-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-4-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-4-icon"></i>
+            </div>
+          </div>
+          <div class="col-sm-4 forecast-min-low">
+            <p><spam class="high-temperature" id="forecast-day-4-ht"></spam></p>
+            <p><spam class="low-temperature" id="forecast-day-4-lt"></spam></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-5-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-5-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-2-icon"></i>
+            </div>
+          </div>
+          <div class="col-sm-4 forecast-min-low">
+            <p><spam class="high-temperature" id="forecast-day-2-ht"></spam></p>
+            <p><spam class="low-temperature" id="forecast-day-2-lt"></spam></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 3 -->
+      <div class="col-md-2 col-sm-4 day-weather-box">
+        <div class="col-sm-12 day-weather-inner-box">
+          <div class="col-sm-8 forecast-main">
+            <p id="forecast-day-6-name"></p>
+            <div class="row">
+              <h5 id="forecast-day-6-main">°</h5>
+              <i class="wi forecast-icon" id="forecast-day-3-icon"></i>
+            </div>
+          </div>
+      
+    </div>
+  </div>
+</body>
