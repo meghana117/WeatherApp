@@ -7,11 +7,13 @@ var data = '{"coord":{"lon":77.59,"lat":12.98},"weather":[{"id":802,"main":"Clou
 $(function(){
   getClientPosition();
   startClock();  
-  document.getElementById("humidity").innerHTML="45";
+  document.getElementById("city-name").innerHTML="BENGALURU";
+  document.getElementById("city-code").innerHTML="IN";
+  document.getElementById("humidity").innerHTML="43";
   document.getElementById("precipitation").innerHTML="0";
   document.getElementById("wind").innerHTML="4.73";
-  document.getElementById("sunrise").innerHTML="5.49am";
-  document.getElementById("sunset").innerHTML="6.34pm";
+  document.getElementById("sunrise").innerHTML="5:49am";
+  document.getElementById("sunset").innerHTML="6:34pm";
   document.getElementById("cloud").innerHTML="44";
   document.getElementById("dew").innerHTML="10";
 });
