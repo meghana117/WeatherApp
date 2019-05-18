@@ -97,12 +97,6 @@ function updateForecast(forecast){
 }
 
 
-$("#refreshButton").on("click", function(){
-  // Starts Refresh button's spinning animation
-  $("#refreshButton").html("<i class='fa fa-refresh fa-spin fa-fw'></i>");
-  getWeatherData();
-});
-
 
 $("#celcius").on("click", function(){
   if(!unitIsCelcius){
@@ -164,14 +158,7 @@ function getFormattedDate(date){
 }
 
 
-function toCamelCase(str) {
-  var arr = str.split(" ").map(
-    function(sentence){
-      return sentence.charAt(0).toUpperCase() + sentence.substring(1);
-    }
-  );
-  return arr.join(" ");
-}
+
 
 
 // Converts to Celcius
