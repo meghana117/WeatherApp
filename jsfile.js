@@ -1,21 +1,27 @@
 var unitIsCelcius = true;
 var globalForecast = [];
 
-var data = '{"coord":{"lon":77.59,"lat":12.98},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":304.8,"pressure":1011,"humidity":43,"temp_min":303.71,"temp_max":306.15},"visibility":10000,"wind":{"speed":1,"deg":340},"clouds":{"all":40},"dt":1558179498,"sys":{"type":1,"id":9205,"message":0.0054,"country":"IN","sunrise":1558139032,"sunset":1558184907},"id":1277333,"name":"Bengaluru","cod":200}';
+var data = JSON.parse('{"coord":{"lon":77.59,"lat":12.98},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":304.8,"pressure":1011,"humidity":43,"temp_min":303.71,"temp_max":306.15},"visibility":10000,"wind":{"speed":1,"deg":340},"clouds":{"all":40},"dt":1558179498,"sys":{"type":1,"id":9205,"message":0.0054,"country":"IN","sunrise":1558139032,"sunset":1558184907},"id":1277333,"name":"Bengaluru","cod":200}');
+
 
 
 $(function(){
   getClientPosition();
   startClock();  
-  document.getElementById("city-name").innerHTML="BENGALURU";
-  document.getElementById("city-code").innerHTML="IN";
-  document.getElementById("humidity").innerHTML="43";
+  document.getElementById("city-name").innerHTML=data.name;
+  document.getElementById("city-code").innerHTML=data.sys.country;
+  document.getElementById("humidity").innerHTML=data.main.humidity;
   document.getElementById("precipitation").innerHTML="0";
-  document.getElementById("wind").innerHTML="4.73";
-  document.getElementById("sunrise").innerHTML="5:49am";
-  document.getElementById("sunset").innerHTML="6:34pm";
-  document.getElementById("cloud").innerHTML="44";
-  document.getElementById("dew").innerHTML="10";
+  document.getElementById("wind").innerHTML=data.wind.speed;
+  var sunrise=new Date(data.sys.sunrise)
+  var sunset=new Date(data.sys.sunset)
+  document.getElementById("sunrise").innerHTML=sunrise;
+  document.getElementById("sunset").innerHTML=sunset;
+  document.getElementById("cloud").innerHTML=data.clouds.all;
+  document.getElementById("dew").innerHTML=data.dew;
+  document.getElementById("visibility").innerHTML=data.visibility;
+  document.getElementById("localtime").innerHTML=new Date().toLocaleTimeString();
+  document.getElementById("localdate").innerHTML=new Date().toLocaleDateString();
 });
 
 
@@ -91,9 +97,6 @@ function updateForecast(forecast){
     $("#forecast-day-" + i + "-lt").text(Math.round(day.temp.min));
   }
 }
-
-
-
 
 
 // Celcius button handler.
